@@ -9,7 +9,7 @@ client = MlflowClient()
 l1=[]
 d1={}
 # Specify your experiment name
-for i in range(1,11):
+for i in range(12,18):
     l2=[]
     experiment_name = f"cmapss_turbofan_experiment_{i}"
     experiment = client.get_experiment_by_name(experiment_name)
@@ -45,20 +45,20 @@ for i in range(1,11):
 
 l1_sorted=sorted(l1, key=lambda x:x[1])
 
-# for m in l1_sorted:
-#     print(m)
+for m in l1_sorted:
+    print(m)
 
-best_run_id = l1_sorted[0][3]
-print(best_run_id)
-run_id = best_run_id
-run = client.get_run(run_id)
+# best_run_id = l1_sorted[0][3]
+# print(best_run_id)
+# run_id = best_run_id
+# run = client.get_run(run_id)
 
 
 
-model_uri = f"runs:/{best_run_id}/GRU"
-registered_model_name = "CMAPSS_GRU_RUL_Predictor"
+# model_uri = f"runs:/{best_run_id}/GRU"
+# registered_model_name = "CMAPSS_GRU_RUL_Predictor"
     
-# Register the model into the MLflow Model Registry
-model_version = mlflow.register_model(model_uri, registered_model_name)
-print(f"Successfully registered model version {model_version.version} under '{registered_model_name}'")
+# # Register the model into the MLflow Model Registry
+# model_version = mlflow.register_model(model_uri, registered_model_name)
+# print(f"Successfully registered model version {model_version.version} under '{registered_model_name}'")
 
