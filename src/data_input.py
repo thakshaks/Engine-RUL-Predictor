@@ -6,7 +6,7 @@ excel_path = "E:/P2/Python/TurbofanEngine/git/data/test_FD001.xlsx"
 df = pd.read_excel(excel_path)
 
 workbook = openpyxl.load_workbook("E:/P2/Python/TurbofanEngine/git/data/test_FD001.xlsx")
-sheet = workbook["Sheet3"] 
+sheet = workbook["Sheet4"] 
 
 # if len(df)<30:
 #     print("Insufficient data. Please provide at least 30 time steps of sensor data.")
